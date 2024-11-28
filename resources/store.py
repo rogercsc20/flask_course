@@ -17,6 +17,7 @@ class Store(MethodView):
         store = StoreModel.query.get_or_404(store_id)
         return store
 
+    @blp.response(200)
     def delete(self, store_id):
         store = StoreModel.query.get_or_404(store_id)
         db.session.delete(store)
